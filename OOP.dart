@@ -2,7 +2,13 @@ import 'dart:io';
 
 class Library with searchIndex, mainMenuProcesses {
   var allBooks, lentBooks, bookList = [], userList = [];
-  List genres = ["Narrative", "Sci-Fi", "Thriller", "Poetry", "History"];
+  List genres = [
+    "Computer Science",
+    "Philosophy",
+    "Pure Science",
+    "Art and Recreation",
+    "History"
+  ];
 
   Library() {
     allBooks = 0;
@@ -163,7 +169,7 @@ mixin mainMenuProcesses {
       //view books based on a certain genre
       else if (viewBooks == '2') {
         stdout.write(
-            "\nGenres available:\n(1)Narrative\n(2)Sci-Fi\n(3)Thriller\n(4)Poetry\n(5)History\nType option: ");
+            "\nGenres available:\n(1)Computer Science\n(2)Philosophy\n(3)Pure Science\n(4)Art and Recreation\n(5)History\nType option: ");
         int? viewGenres = int.tryParse(stdin.readLineSync()!);
 
         if (viewGenres != null && (viewGenres > 0 || viewGenres < 6)) {
@@ -343,41 +349,33 @@ void systemTest(var testLib) {
 //method to add mock information to the library
 void testAdd(var testLib) {
   testLib.addBook(
-      "In Cold Blood", "Truman Capote", "Narrative", "978-0679745587");
+      "Hello Dolly", "Amore May", "Philosophy", "978-1-60309-047-6");
+  testLib.addBook("At The End of The Universe", "Felix Yongbok", "Pure Science",
+      "978-1-891830-85-3");
   testLib.addBook(
-      "Behind the Beautiful Forevers: Life, Death, and Hope in a Mumbai Undercity",
-      "Katherine Boo",
-      "Narrative",
-      "9978-0812979329");
+      "Are You Alone?", "Annabelle Conjure", "Philosophy", "978-1-60309-016-2");
+  testLib.addBook("The Art of Symmetry", "SQ Kim", "Art and Recreation",
+      "978-1-60309-265-4");
+  testLib.addBook("Introduction to C", "Kevin Steinfield", "Computer Science",
+      "978-1-65309-067-1");
+  testLib.addBook("The Beginning of Mankind", "Linda Struss", "History",
+      "978-1-876830-35-3");
+  testLib.addBook("Is The Truth True?", "Sicily Walker", "Philosophy",
+      "978-1-51260309-316-2");
   testLib.addBook(
-      "Into Thin Air: A Personal Account of the Mt. Everest Disaster",
-      "Jon Krakauer",
-      "Narrative",
-      "978-0385494786");
-  testLib.addBook("The Left Hand of Darkness: 50th Anniversary Edition",
-      "Ursula K. Le Guin", "Sci-Fi", "978-0441478125");
-  testLib.addBook("The Handmaid's Tale (Graphic Novel)", "Margaret Atwood",
-      "Sci-Fi", "978-0385539241");
-  testLib.addBook("Neuromancer", "William Gibson", "Sci-Fi", "978-0441569595");
+      "Rainbows and Rain", "Milli Smith", "Pure Science", "978-1-40315-645-3");
+  testLib.addBook("Curvy Nature", "Pablo Vivaldi", "Art and Recreation",
+      "978-1-51339-967-5");
+  testLib.addBook("Dart for Dummies", "Hyunjin Fryer", "Computer Science",
+      "978-1-12830-05-3");
+  testLib.addBook("The French War", "Von Bach", "History", "979-3-41309-096-2");
   testLib.addBook(
-      "The Silent Patient", "Alex Michaelides", "Thriller", " 978-1250301703");
-  testLib.addBook("Verity", "Colleen Hoover", "Thriller", "978-1538724736");
-  testLib.addBook(
-      "The Last Thing He Told Me", "Laura Dave", "Thriller", "978-1501171345");
-  testLib.addBook("Milk and Honey", "Rupi Kaur", "Poetry", "978-1449474256");
-  testLib.addBook(
-      "The Sun and Her Flowers", "Rupi Kaur", "Poetry", "978-1449486792");
-  testLib.addBook(
-      "Call Us What We Carry", "Amanda Gorman", "Poetry", "978-0593465066");
-  testLib.addBook(
-      "The Devil in the White City: Murder, Magic, and Madness at the Fair That Changed America",
-      "Erik Larson",
-      "History",
-      "978-0375725609");
-  testLib.addBook(
-      "Salt: A World History", "Mark Kurlansky", "History", "978-0142001615");
-  testLib.addBook("Battle Cry of Freedom: The Civil War Era",
-      "James M. McPherson", "History", "978-0195168952");
+      "Road to Happiness", "Happy Baltazar", "Philosophy", "978-1-88809-203-4");
+  testLib.addBook("Tardigrades: The Immortals of the Microcosmos", "Paulo Nase",
+      "Pure Science", "978-7-61209-817-6");
+  testLib.addBook("When To Stop Chasing Your Dreams", "Albert Schmidt",
+      "Philosophy", "978-1-543130-14-3");
+  testLib.addBook("Smile", "Annalisa Mayer", "Philosophy", "978-1-91409-516-6");
 }
 
 //main function starts here
